@@ -1,0 +1,29 @@
+{
+    "name" : "kwrz/twig-exception",
+    "description" : "Use to make customizables Twig exception pages for routes or specific HTTP status codes",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Julien Demangeon",
+        "email" : "freelance@demangeon.fr"
+    }],
+    "keywords" : ["twig", "exception", "view", "route"],
+    "license" : ["MIT"],
+    "require" : {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1",
+        "twig/twig": "*"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Kwrz\\Bundle\\TwigExceptionBundle" : ""
+        }
+    },
+    "target-dir" : "Kwrz/Bundle/TwigExceptionBundle",
+    "repositories" : [{}],
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : ""
+        }
+    },
+    "minimum-stability": "dev"
+}
