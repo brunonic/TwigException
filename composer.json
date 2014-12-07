@@ -19,11 +19,5 @@
         }
     },
     "target-dir" : "Kwrz/Bundle/TwigExceptionBundle",
-    "repositories" : [{}],
-    "extra" : {
-        "branch-alias" : {
-            "dev-master" : ""
-        }
-    },
     "minimum-stability": "dev"
 }
