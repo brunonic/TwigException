@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the KwrzTwigExceptionBundle.
+ *
+ * Copyright 2014 Julien Demangeon <freelance@demangeon.fr>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Kwrz\Bundle\TwigExceptionBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -8,6 +17,15 @@ use Symfony\Component\HttpKernel\Exception\FlattenException;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
 
+/**
+ * Bundle Exception Controller
+ *
+ * Render Response based on request and exception
+ * Inspired from the TwigExceptionController
+ * Provide the same parameters to the view
+ *
+ * @author Julien Demangeon <freelance@demangeon.fr>
+ */
 class TwigExceptionController
 {
     
