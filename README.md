@@ -1,4 +1,4 @@
 TwigException
 =============
 
-Use to make customizables Twig exception pages for roads or specific HTTP status codes
+Use to make customizables Twig exception pages for routes or specific HTTP status codes.
