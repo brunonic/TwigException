@@ -1,4 +1,4 @@
-TwigException
+TwigExceptionBundle
 =============
 
 ## About
