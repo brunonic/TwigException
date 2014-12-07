@@ -1,0 +1,21 @@
+parameters:
+    
+    kernel.listener.kwrz_exception_listener.class: Kwrz\Bundle\TwigExceptionBundle\EventListener\KwrzExceptionListener
+    kwrz.service.kwrz_exception_controller.class: Kwrz\Bundle\TwigExceptionBundle\Controller\TwigExceptionController
+    kwrz.service.kwrz_exception_route_registry.class: Kwrz\Bundle\TwigExceptionBundle\Registry\ExceptionRouteRegistry
+
+services:
+
+    kwrz.service.kwrz_exception_route_registry:
+        class: %kwrz.service.kwrz_exception_route_registry.class%
+        arguments: ["%kwrz_twig_exception.handlers%"]
+
+    kwrz.service.kwrz_exception_controller:
+        class: %kwrz.service.kwrz_exception_controller.class%
+        arguments: ["@templating", "@logger"]
+
+    kernel.listener.kwrz_exception_listener:
+            class: %kernel.listener.kwrz_exception_listener.class%
+            arguments: ["@kwrz.service.kwrz_exception_controller", "@kwrz.service.kwrz_exception_route_registry", "%kernel.debug%", "%kwrz_twig_exception.with_debug%"]
+            tags:
+                - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
