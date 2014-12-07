@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+  <services>
+    <service id="kwrz.service.kwrz_exception_route_registry" class="Kwrz\Bundle\TwigExceptionBundle\Registry\ExceptionRouteRegistry">
+      <argument>%kwrz_twig_exception.handlers%</argument>
+    </service>
+    <service id="kwrz.service.kwrz_exception_controller" class="Kwrz\Bundle\TwigExceptionBundle\Controller\TwigExceptionController">
+      <argument type="service" id="templating"/>
+      <argument type="service" id="logger"/>
+    </service>
+    <service id="kernel.listener.kwrz_exception_listener" class="Kwrz\Bundle\TwigExceptionBundle\EventListener\KwrzExceptionListener">
+      <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException"/>
+      <argument type="service" id="kwrz.service.kwrz_exception_controller"/>
+      <argument type="service" id="kwrz.service.kwrz_exception_route_registry"/>
+      <argument>%kernel.debug%</argument>
+      <argument>%kwrz_twig_exception.with_debug%</argument>
+    </service>
+  </services>
+</container>
