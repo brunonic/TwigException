@@ -1,6 +1,9 @@
 TwigExceptionBundle
 =============
 
+
+[![SensionLab Insight](https://insight.sensiolabs.com/projects/17d6cbfb-07cc-491a-bb0e-5982fbaf9dc7/big.png)](https://insight.sensiolabs.com/projects/17d6cbfb-07cc-491a-bb0e-5982fbaf9dc7)
+
 ## About
 
 Use to make customizables Twig exception pages for routes or specific HTTP status codes.
