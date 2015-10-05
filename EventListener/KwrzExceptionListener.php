@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use Symfony\Component\HttpKernel\Exception\FlattenException;
+use Symfony\Component\Debug\Exception\FlattenException;
 use Kwrz\Bundle\TwigExceptionBundle\Controller\TwigExceptionController as Controller;
 use Kwrz\Bundle\TwigExceptionBundle\Registry\ExceptionRouteRegistry as Registry;
 
