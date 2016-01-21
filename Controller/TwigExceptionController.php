@@ -13,7 +13,7 @@ namespace Kwrz\Bundle\TwigExceptionBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\FlattenException;
+use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
 
