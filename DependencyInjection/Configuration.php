@@ -38,6 +38,7 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('handlers')
                     ->prototype('array')
                         ->children()
+                            ->scalarNode('host')->end()
                             ->scalarNode('regex')->isRequired()->cannotBeEmpty()->end()
                             ->scalarNode('template')->isRequired()->cannotBeEmpty()->end()
                             ->arrayNode('status_code')->prototype('scalar')->defaultValue(array())->end()

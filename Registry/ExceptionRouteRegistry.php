@@ -44,7 +44,8 @@ class ExceptionRouteRegistry
      */
     public function matchRequest(Request $request, $expectedStatusCode = null)
     {
-        
+
+        $host = $request->getHost();
         $path_info = $request->getPathInfo();
         
         foreach($this->registry as $registry){
@@ -52,6 +53,12 @@ class ExceptionRouteRegistry
             // Check if the expectedStatusCode is part of the authorized status
             
             if(count($registry['status_code']) > 0 && !in_array($expectedStatusCode, $registry['status_code'])){
+                continue;
+            }
+
+            // Check if registry host is the request host
+
+            if (array_key_exists('host', $registry) && !preg_match('/' . $registry['host'] . '/', $host)) {
                 continue;
             }
             
