@@ -1,10 +1,13 @@
 {
-    "name" : "kwrz/twig-exception",
+    "name" : "modnarlluf/twig-exception",
     "description" : "Use to make customizables Twig exception pages for routes or specific HTTP status codes",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Julien Demangeon",
         "email" : "freelance@demangeon.fr"
+    }, {
+        "name" : "Brice Sigura",
+        "email" : "brice.sigura@gmail.com"
     }],
     "keywords" : ["twig", "exception", "view", "route"],
     "license" : ["MIT"],
