@@ -1,5 +1,5 @@
 {
-    "name" : "modnarlluf/twig-exception",
+    "name" : "brunonic/twig-exception",
     "description" : "Use to make customizables Twig exception pages for routes or specific HTTP status codes",
     "type" : "symfony-bundle",
     "authors" : [{
