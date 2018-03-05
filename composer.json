@@ -8,13 +8,16 @@
     }, {
         "name" : "Brice Sigura",
         "email" : "brice.sigura@gmail.com"
+    }, {
+        "name" : "Bruno Nicolle",
+        "email" : "nicolle.bruno@gmail.com"
     }],
     "keywords" : ["twig", "exception", "view", "route"],
     "license" : ["MIT"],
     "require" : {
-        "php": ">=5.3.2",
-        "symfony/framework-bundle": ">=2.4",
-        "twig/twig": ">=1.12"
+        "php": ">=7.0.8",
+        "symfony/framework-bundle": ">=3.4",
+        "symfony/twig-bundle": "^3.4"
     },
     "autoload" : {
         "psr-0" : {
