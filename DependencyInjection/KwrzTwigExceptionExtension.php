@@ -23,30 +23,24 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class KwrzTwigExceptionExtension extends Extension
 {
-    
     /**
      * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-    
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
         if ($config['enabled']) {
-            
             $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
             $loader->load('services.xml');
             
             if(!isset($config['handlers'])){
-                $config['handlers'] = array();
+                $config['handlers'] = [];
             }
 
             $container->setParameter('kwrz_twig_exception.handlers', $config['handlers']);
             $container->setParameter('kwrz_twig_exception.with_debug', $config['with_debug']);
-            
         }
-        
     }
-    
 }
