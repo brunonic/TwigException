@@ -34,4 +34,4 @@ If you want to disable this bundle in some environment, simply set the `kwrz_twi
 
 Require the `modnarlluf/twig-exception` package in your composer.json and update your dependencies.
 
-    $ composer require "brunonic/twig-exception"
+    $ composer require "modnarlluf/twig-exception"
