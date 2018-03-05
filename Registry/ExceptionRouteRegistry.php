@@ -22,58 +22,53 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ExceptionRouteRegistry
 {
-
+    /**
+     * @var array
+     */
     private $registry;
-    
+
     /**
      * Construct registry from configuration
+     *
      * @param array $paths
      */
     public function __construct(array $paths)
     {
-        
         $this->registry = $paths;
-        
     }
-    
+
     /**
      * Test if request is in routeCollection and return template
-     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @param Request $request
      * @param mixed $expectedStatusCode
+     *
      * @return mixed
      */
     public function matchRequest(Request $request, $expectedStatusCode = null)
     {
-
         $host = $request->getHost();
         $path_info = $request->getPathInfo();
-        
+
         foreach($this->registry as $registry){
-            
             // Check if the expectedStatusCode is part of the authorized status
-            
             if(count($registry['status_code']) > 0 && !in_array($expectedStatusCode, $registry['status_code'])){
                 continue;
             }
 
             // Check if registry host is the request host
-
             if (array_key_exists('host', $registry) && !preg_match('/' . $registry['host'] . '/', $host)) {
                 continue;
             }
-            
+
             // Check if the regex match the current path info
-            
             if (!preg_match('/' . $registry['regex'] . '/', $path_info)) {
                 continue;
             }
-            
+
             return $registry['template'];
-            
         }
-        
+
         return false;
-        
     }
-    
 }
