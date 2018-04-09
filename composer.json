@@ -17,7 +17,7 @@
     "require" : {
         "php": ">=7.0.8",
         "symfony/framework-bundle": ">=3.4",
-        "symfony/twig-bundle": "^3.4"
+        "symfony/twig-bundle": ">=3.4"
     },
     "autoload" : {
         "psr-0" : {
